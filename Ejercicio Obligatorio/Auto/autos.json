@@ -1,0 +1,12 @@
+[
+{
+    "brand":"Ford",
+    "model" : "Fiesta",
+    "year": 1997,
+    "colour": "azul",
+    "origin":"Argentina",
+    "owner":"juanVazquez",
+    "patent":"CPA212"
+}
+
+]
