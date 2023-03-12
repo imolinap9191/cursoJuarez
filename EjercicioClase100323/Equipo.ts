@@ -1,8 +1,8 @@
 export default class Equipo{
-private id:string;
-private descripcion:string;
-private fechaFab:Date;
-private fechaInst:Date;
+protected id:string;
+protected descripcion:string;
+protected fechaFab:Date;
+protected fechaInst:Date;
 constructor(id:string,descripcion:string,fechaFab:Date,fechaInst:Date){
 this.id=id;
 this.descripcion=descripcion;
@@ -53,10 +53,26 @@ public eliminar_equipo(dispositivo: string, buscador: Equipo[]): any {
      console.log('El dispositivo ', dispositivo, 'no ha sido eliminado');
     }
 }
+
 }
+//Declaro instancias para poner en practica funciones
+const equipoOne : Equipo= new Equipo("69818573807949","equipo1",new Date("2022-01-10"), new Date("2023-03-09"));
+const equipoTwo : Equipo= new Equipo("69818573807950","equipo2",new Date("2022-01-12"), new Date("2023-03-10"));
+const equipoThree : Equipo= new Equipo("69818573807951","equipo3",new Date("2022-01-15"), new Date("2023-03-11"));
+//creo array para manipular datos y almacenarlos
+const stockEquipos:Equipo[]=[]
+//inserto las 3 intancias creadas
+equipoOne.agregar_equipo(equipoOne,stockEquipos)
+equipoTwo.agregar_equipo(equipoTwo,stockEquipos)
+equipoThree.agregar_equipo(equipoThree,stockEquipos)
+//modifico nombre de equipoOne
+equipoOne.editar_equipo("69818573807949",stockEquipos,"equipo1A")
+//eliminamos equipoOne
+equipoOne.eliminar_equipo("equipo1A",stockEquipos)
+//consultamos si se encuentra equipoOne
+equipoOne.leer_equipo("equipo1",stockEquipos)//confirmamos que no se encuentra en base de datos
+equipoTwo.leer_equipo("69818573807950",stockEquipos)//confirmamos que existe en base de datos
 
-const str = '2024-07-21';
 
-const date = new Date(str)
 
-//const equipoTwo : Equipo= new Equipo("12","gfdgfd",Date.toString(),Date.toString() ))
+

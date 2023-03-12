@@ -1,19 +1,21 @@
+import Equipo from "./equipo";
+export {Efic,Motor}
 enum Efic {
     A,B,C,D,E,F,G
   }
-  export default
-class Motor{
-    private id:string;
-    private potenciaHp:number;
-    private eficiencia:Efic;
-    private fabricante:string;
-    constructor(id:string,potenciaHp:number,eficiencia:Efic,fabricante:string){
+ 
+class Motor extends Equipo{
+    protected potenciaHp:number;
+    protected eficiencia:Efic;
+    protected fabricante:string;
+    constructor(id:string,potenciaHp:number,eficiencia:Efic,fabricante:string,descripcion:string ,fechaFab:Date,fechaInst:Date){
+        super(id,descripcion,fechaFab,fechaInst)
     this.id=id;
     this.potenciaHp=potenciaHp;
     this.eficiencia=eficiencia;
     this.fabricante=fabricante
     }
-    private getEfic(eficiencia: Efic): string {
+    protected getEfic(eficiencia: Efic): string {
         const norma = {
           0: "A",
           1: "B",
@@ -23,7 +25,7 @@ class Motor{
           5: "F",
           6: "G"
         };
-        return norma[eficiencia];
+        return norma[eficiencia] || "no se reconoce dicha especificación, intente nuevamente"
       }
       public getInfo(): string {
         return `
@@ -31,9 +33,34 @@ class Motor{
         Potencia HP: ${this.potenciaHp}
         Eficiencia:    ${this.getEfic(this.eficiencia)}
         Fabricante: ${this.fabricante}
+        Descripcion: ${this.descripcion}
+        Fecha Fabric: ${this.fechaFab}
+        Fecha Instalacion: ${this.fechaInst}
         `;
-      }
-    public agregar_motor(motor: Motor, buscador: Motor[]){
+      }}
+//Declaro instancias para poner en practica funciones
+const Motor1:Motor=new Motor("777984798249",150,Efic.A,"Motores S.A","Motor1",new Date("2020-05-03"),new Date("2023-03-09"))
+const Motor2:Motor=new Motor("777984798250",160,Efic.B,"Motores S.A","Motor2",new Date("2020-05-04"),new Date("2023-03-10"))
+const Motor3:Motor=new Motor("777984798251",170,Efic.C,"Motores S.A","Motor3",new Date("2020-05-05"),new Date("2023-03-11"))
+//creo array para manipular datos y almacenarlos
+const stockMotores:Motor[]=[]
+//inserto las 3 intancias creadas
+Motor1.agregar_equipo(Motor1,stockMotores)
+Motor2.agregar_equipo(Motor2,stockMotores)
+Motor3.agregar_equipo(Motor3,stockMotores)
+//modifico nombre de Motor1
+Motor1.editar_equipo("777984798249",stockMotores,"Motor1A")
+//eliminamos Motor1
+Motor1.eliminar_equipo("Motor1A",stockMotores)
+//consultamos si se encuentra Motor1
+Motor1.leer_equipo("Motor1A",stockMotores)
+ //utilizo funcion get.Info para mostrar con estructura los datos
+console.log(Motor1.getInfo())
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+    /*public agregar_motor(motor: Motor, buscador: Motor[]){
         if(buscador.push(motor)){
             console.log('Se ha añadido ', motor.id, ' a la base de datos', buscador);
         } else{
@@ -80,4 +107,4 @@ class Motor{
     }
     const motorTwo: Motor= new Motor ("45",24,Efic.A,"juan");
 
-    console.log(motorTwo.getInfo())
+    console.log(motorTwo.getInfo())*/
