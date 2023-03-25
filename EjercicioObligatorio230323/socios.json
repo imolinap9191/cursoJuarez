@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "ignacio",
+    "apellido": "molina",
+    "fechaNacimiento": "2/5/1991",
+    "documento": "36362001",
+    "telefono": "2281325016",
+    "miembroDesde": "25/3/2023",
+    "deporte": 0
+  },
+  {
+    "nombre": "pedro",
+    "apellido": "gonzalez",
+    "fechaNacimiento": "2/5/1950",
+    "documento": "36362000",
+    "telefono": "2281325015",
+    "miembroDesde": "25/3/2023",
+    "deporte": 1
+  }
+]

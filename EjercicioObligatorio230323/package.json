@@ -1,0 +1,23 @@
+{
+  "name": "-y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imolinap9191/cursoJuarez.git"
+  },
+  "author": "nacho}",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imolinap9191/cursoJuarez/issues"
+  },
+  "homepage": "https://github.com/imolinap9191/cursoJuarez#readme",
+  "dependencies": {
+    "@types/node": "^18.15.9",
+    "readline-sync": "^1.4.10"
+  }
+}

@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "@types/node": "^18.14.2",
-    "file-system": "^2.2.2"
+    "@types/node": "^18.15.9",
+    "file-system": "^2.2.2",
+    "readline-sync": "^1.4.10",
+    "ts-node": "^10.9.1"
   }
 }
