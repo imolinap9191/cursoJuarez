@@ -2,8 +2,8 @@
   {
     "nombre": "ignacio",
     "apellido": "molina",
-    "fechaNacimiento": "2/5/1991",
-    "documento": "36362001",
+    "fechaNacimiento": "8/7/1991",
+    "documento": "36362000",
     "telefono": "2281325016",
     "miembroDesde": "25/3/2023",
     "deporte": 0
@@ -11,10 +11,82 @@
   {
     "nombre": "pedro",
     "apellido": "gonzalez",
-    "fechaNacimiento": "2/5/1950",
-    "documento": "36362000",
-    "telefono": "2281325015",
+    "fechaNacimiento": "5/8/1950",
+    "documento": "36362002",
+    "telefono": "2281325018",
     "miembroDesde": "25/3/2023",
     "deporte": 1
+  },
+  {
+    "nombre": "juan",
+    "apellido": "garcia",
+    "fechaNacimiento": "2/5/1945",
+    "documento": "36362001",
+    "telefono": "2281325019",
+    "miembroDesde": "25/3/2023",
+    "deporte": 2
+  },
+  {
+    "nombre": "luciano",
+    "apellido": "perez",
+    "fechaNacimiento": "4/5/1985",
+    "documento": "36458952",
+    "telefono": "2281325015",
+    "miembroDesde": "25/3/2023",
+    "deporte": 3
+  },
+  {
+    "nombre": "luis",
+    "apellido": "gomez",
+    "fechaNacimiento": "5/4/1978",
+    "documento": "25478962",
+    "telefono": "2281478596",
+    "miembroDesde": "25/3/2023",
+    "deporte": 3
+  },
+  {
+    "nombre": "geronimo",
+    "apellido": "lopez",
+    "fechaNacimiento": "2/4/1978",
+    "documento": "12587789",
+    "telefono": "2281478596",
+    "miembroDesde": "25/3/2023",
+    "deporte": 5
+  },
+  {
+    "nombre": "mauro",
+    "apellido": "perez",
+    "fechaNacimiento": "1/7/1974",
+    "documento": "12458789",
+    "telefono": "2281748521",
+    "miembroDesde": "25/3/2023",
+    "deporte": 0
+  },
+  {
+    "nombre": "pedro",
+    "apellido": "marmol",
+    "fechaNacimiento": "2/8/1996",
+    "documento": "40542852",
+    "telefono": "2281326589",
+    "miembroDesde": "25/3/2023",
+    "deporte": 2
+  },
+  {
+    "nombre": "maria",
+    "apellido": "pereyra",
+    "fechaNacimiento": "5/7/1999",
+    "documento": "45087423",
+    "telefono": "2281569632",
+    "miembroDesde": "25/3/2023",
+    "deporte": 4
+  },
+  {
+    "nombre": "laura",
+    "apellido": "rosas",
+    "fechaNacimiento": "2/5/1985",
+    "documento": "25087456",
+    "telefono": "2281859472",
+    "miembroDesde": "25/3/2023",
+    "deporte": 3
   }
 ]
