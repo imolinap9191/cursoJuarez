@@ -47,6 +47,8 @@ function guardar(path:any, data:any) {
         console.log('creando...');
         return escribir([data], path);
     }
-}
+    }
+    
+
 module.exports = {check, escribir, leer, guardar}
 
