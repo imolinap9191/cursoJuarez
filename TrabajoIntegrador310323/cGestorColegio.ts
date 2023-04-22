@@ -1,7 +1,7 @@
 import Profesor from "./cProfesor";
 import Alumno from "./cAlumno";
 import {Materia,Asignatura} from "./cMateria"
-import Curso from "./cCurso";
+import { Leccion } from "./cLeccion";
 import { log } from "console";
 const {guardar,leer,check,escribir} = require ('./formulas.ts')
 const fs =require('fs')
@@ -14,34 +14,42 @@ export default class GestorColegio {
 
     dataAlumno(){return JSON.parse(fs.readFileSync('./Archivos-Json/Alumnos.json'))}
     dataProfesor(){return JSON.parse(fs.readFileSync('./Archivos-Json/Profesor.json'))}
-   
- matricularAlumno(){//-----------ver como incluir materias seleccionadas----------------------
-    let nombre:string = readlineSync.question('Escriba el nombre del alumno: ').toLocaleLowerCase();
-    let apellido:string = readlineSync.question('Escriba el apellido del alumno: ').toLocaleLowerCase();
-    let cantMatInsc= Number(readlineSync.question('¿A cuantas meterias se quiere anotar (maximo 8 materias)?: '))
-    let materias=["matematica","literatura","historia","geografia","biologia","fisica","ingles","edFisica"]
-        for (let i = 0; i < cantMatInsc; i++) {
-            let matInsc= readlineSync.keyInSelect(materias,"a cuales de las materias existentes se quiere inscribir")
-            const asignInsc = materias[i];
-            console.log(matInsc)
-            }
-            let newAlumno =new Alumno(nombre,apellido) //-------------------------- no guarda la cantidad de materias seleccionadas porque no esta dentro del constructor de new Alumno¿como incluirlo sin que me salga que no corresponde el tipo de dato que incluyo?
-            let pathAlumno = './Archivos-Json/Alumnos.json'
-    guardar (pathAlumno,newAlumno)
-       
-  }
 
-consultarAlumno(iD:Alumno = readlineSync.question('Escriba el iD del alumno: ')){
-  let alumnoEncontrado=this.dataAlumno().find((alumno: { iD: Alumno; })=>alumno.iD === iD);
+/*crearLeccion(){
+  let leccion: string = readlineSync.question('Escriba el nombre de la leccion que desea crear: ').toLocaleLowerCase();
+  let lecciones = leccion[]
+}*/
+   
+ matricularAlumno(){ let nombre:string = readlineSync.question('Escriba el nombre del alumno: ').toLocaleLowerCase();
+ let apellido:string = readlineSync.question('Escriba el apellido del alumno: ').toLocaleLowerCase();
+ let cantMatInsc= Number(readlineSync.question('¿A cuantas meterias se quiere anotar (maximo 8 materias)?: '))
+ let materias=["matematica","literatura","historia","geografia","biologia","fisica","ingles","edFisica"]
+ let arrMat : string[]= [];
+ for (let i = 0; i < cantMatInsc; i++) {
+         let matInsc= readlineSync.keyInSelect(materias,"a cuales de las materias existentes se quiere inscribir")
+         let asignInsc:string = materias[matInsc];
+         arrMat.push(asignInsc)
+         console.log(asignInsc);
+         console.log(arrMat);
+         //console.log(matInsc);
+         }
+        let newAlumno =new Alumno(nombre,apellido,arrMat);
+        let pathAlumno = './Archivos-Json/Alumnos.json'
+ guardar (pathAlumno,newAlumno)
+}
+
+consultarAlumno(iD:string= readlineSync.question('Escriba el iD del alumno: ')){
+  let alumnoEncontrado=this.dataAlumno().find((alumno:Alumno)=>alumno.iD === iD);
   if(alumnoEncontrado){
     console.log(iD, 'existe en el gestor colegio', alumnoEncontrado)
     return alumnoEncontrado
-  }else{
-    console.log(iD , 'No existe en el gestor colegio')
+  }else{ 
+     console.log(iD , 'No existe en el gestor colegio')
+     return null
   }
 }
 
-modificarAlumno(iD:Alumno = readlineSync.question('Escriba el iD del alumno: ')){
+modificarAlumno(iD:string = readlineSync.question('Escriba el iD del alumno: ')){
   let pathAlumno = './Archivos-Json/Alumnos.json'
   let alumnoModificar=this.consultarAlumno(iD)
   if(alumnoModificar){
@@ -70,13 +78,6 @@ eliminarAlumno(iD:Alumno = readlineSync.question('Escriba el iD del alumno: ')){
   }
 }
 
-agregarCurso(){
-    const curso=readlineSync.question("ingresar nombre del curso: ");
-    const crearCurso= new Curso(curso);
-    let pathCurso= "./Archivos-Json/Curso.json";
-    console.log(crearCurso);
-    guardar(pathCurso,crearCurso)
-}
 agregarProfesor(){
     let nombre:string = readlineSync.question('Escriba el nombre del profesor: ').toLocaleLowerCase();
     let apellido:string = readlineSync.question('Escriba el apellido del profesor: ').toLocaleLowerCase();

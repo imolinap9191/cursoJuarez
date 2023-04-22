@@ -7,12 +7,10 @@ export class Materia{
     nombre:Asignatura;
     alumnos:Alumno[];
     profesor:Profesor
-    promedios:number[]
 
     constructor(nombre:Asignatura,profesor:Profesor){
         this.nombre= nombre;
         this.alumnos=[];
         this.profesor=profesor;
-        this.promedios=[]
     }
  }

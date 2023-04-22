@@ -1,11 +1,20 @@
 [
   {
+    "nombre": "pepe",
+    "apellido": "hola",
+    "iD": "fce24",
+    "materias": []
+  },
+  {
+    "nombre": "pepe",
+    "apellido": "hola",
+    "iD": "b573a",
+    "materias": []
+  },
+  {
     "nombre": "juan",
-    "apellido": "palo",
-    "iD": "9657d",
-    "materias": [],
-    "notas": [],
-    "profesores": [],
-    "curso": []
+    "apellido": "loo",
+    "iD": "04e45",
+    "materias": []
   }
 ]
