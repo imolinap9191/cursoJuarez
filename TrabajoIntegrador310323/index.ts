@@ -5,11 +5,19 @@ import GestorColegio from "./cGestorColegio";
 const {guardar,leer,check,escribir} = require ('./formulas.ts')
 
 
+//Se crea el Gestor para manipular los datos
 let escuelaUno = new GestorColegio ("Escuela Uno");
 
-escuelaUno.matricularAlumno() //no incluye en json las materias seleccionadas
-//escuelaUno.agregarCurso()
-//escuelaUno.agregarProfesor()
-//escuelaUno.consultarAlumno()
-//escuelaUno.modificarAlumno()
-//escuelaUno.eliminarAlumno()
+//Funcionalidades
+
+//ALUMNOS
+//escuelaUno.matricularAlumno() //FUNCIONA
+//escuelaUno.modificarAlumno() //FUNCIONA
+//escuelaUno.consultarAlumno() //FUNCIONA
+//escuelaUno.eliminarAlumno() //FUNCIONA
+
+//PROFESORES
+//escuelaUno.agregarProfesor() //FUNCIONA
+//escuelaUno.modificarProfesor() //FUNCIONA
+//escuelaUno.consultarProfesor() //FUNCIONA
+//escuelaUno.eliminarProfesor() //FUNCIONA

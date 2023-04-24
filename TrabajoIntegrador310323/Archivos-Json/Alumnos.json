@@ -1,20 +1,26 @@
 [
   {
-    "nombre": "pepe",
-    "apellido": "hola",
-    "iD": "fce24",
-    "materias": []
+    "nombre": "ignacio",
+    "apellido": "molina",
+    "iD": "84cf1",
+    "materias": ["matematica", "literatura"],
+    "notas": [5 , 8],
+    "promedio": 0
   },
   {
-    "nombre": "pepe",
-    "apellido": "hola",
-    "iD": "b573a",
-    "materias": []
+    "nombre": "gdfg",
+    "apellido": "er",
+    "iD": "84cf2",
+    "materias": ["matematica", "literatura"],
+    "notas": [0, 0],
+    "promedio": 0
   },
   {
-    "nombre": "juan",
-    "apellido": "loo",
-    "iD": "04e45",
-    "materias": []
+    "nombre": "gdfg",
+    "apellido": "er",
+    "iD": "84cf3",
+    "materias": ["matematica", "literatura"],
+    "notas": [0, 0],
+    "promedio": 0
   }
 ]

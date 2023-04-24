@@ -1,3 +1,16 @@
 [
- 
+  {
+    "nombre": "Joaquin",
+    "apellido": "perez",
+    "iD": "80e08",
+    "alumnos": [],
+    "materiaAsignada": "biologia"
+  },
+  {
+    "nombre": "juen",
+    "apellido": "gsd",
+    "iD": "80e09",
+    "alumnos": [],
+    "materiaAsignada": "matematicas"
+  }
 ]
