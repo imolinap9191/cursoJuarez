@@ -1,6 +1,4 @@
 import IPersona from "./iPersona";
-import Alumno from "./cAlumno";
-import {Asignatura,Materia} from "./cMateria";
 const {v4: uuidv4} = require ('uuid');
 export default class Profesor implements IPersona{
     nombre:string;

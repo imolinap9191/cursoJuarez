@@ -1,9 +1,8 @@
 import Profesor from "./cProfesor";
 import Alumno from "./cAlumno";
-import {Materia,Asignatura} from "./cMateria"
-const {guardar,leer,check,escribir} = require ('./formulas.ts')
-const fs =require('fs')
-const readlineSync=require('readline-sync')
+const {guardar,leer,check,escribir} = require ("./formulas.ts")
+const fs =require("fs")
+const readlineSync=require("readline-sync")
 //Se da de alta la clase GestorColegio.
 export default class GestorColegio {
     nombre: string;
@@ -15,7 +14,7 @@ export default class GestorColegio {
 
 //Genera un nuevo alumno consultando nombre/apellido/cantidad de materias a inscribirse/indica las materias existentes
 //y luego incorpora las notas y genera el promedio del alumno.
-  matricularAlumno(){
+  /*matricularAlumno(){
   let nombre:string = readlineSync.question('Escriba el nombre del alumno: ').toLocaleLowerCase();
   let apellido:string = readlineSync.question('Escriba el apellido del alumno: ').toLocaleLowerCase();
   let cantMatInsc= Number(readlineSync.question('¿A cuantas meterias se quiere anotar (maximo 8 materias)?: '))
@@ -38,21 +37,47 @@ export default class GestorColegio {
    let newAlumno =new Alumno(nombre,apellido,arrMat,arrNotas,promedio);
    let pathAlumno = './Archivos-Json/Alumnos.json'
    guardar (pathAlumno,newAlumno)
+}*/
+  matricularAlumno(){
+  let nombre:string = readlineSync.question("Escriba el nombre del alumno: ").toLocaleLowerCase();
+  let apellido:string = readlineSync.question("Escriba el apellido del alumno: ").toLocaleLowerCase();
+  let cantMatInsc= Number(readlineSync.question("¿A cuantas meterias se quiere anotar (maximo 8 materias)?: "))
+  let materias=["matematica","literatura","historia","geografia","biologia","fisica","ingles","edFisica"]
+  let arrMat : string[]= [];
+  let arrNotas : number[]= [];
+    for (let i = 0; i < cantMatInsc; i++) {
+      let matInsc= readlineSync.keyInSelect(materias,"a cuales de las materias existentes se quiere inscribir");
+      let asignInsc:string = materias[matInsc];
+      arrMat.push(asignInsc)
+      console.log(asignInsc);
+      console.log(arrMat);
+      }
+    for (let i=0; i<arrMat.length; i++){
+      let notaMatInsc= Number(readlineSync.question( `¿Que nota saco en ${arrMat[i]}  ?: `));
+      arrNotas.push(notaMatInsc)
+      }
+      let sumaNota= arrNotas.reduce((acc,notaMatInsc)=> acc + notaMatInsc,0)
+      console.log(sumaNota);
+      let promedio = sumaNota/arrNotas.length
+      console.log(promedio);
+      let newAlumno = new Alumno(nombre,apellido,arrMat,arrNotas,promedio);
+      let pathAlumno = './Archivos-Json/Alumnos.json'
+      guardar (pathAlumno,newAlumno)
 }
 
 //Verifica la existencia del alumno al buscar el iD una vez encontrado lo devuelve
-  consultarAlumno(iD:string = readlineSync.question('Escriba el iD del alumno: ')){
+  consultarAlumno(iD:string = readlineSync.question("Escriba el iD del alumno: ")){
   let alumnoEncontrado=this.dataAlumno().find((alumno: Alumno)=>alumno.iD === iD);
   if(alumnoEncontrado){
-    console.log(iD, 'existe en el gestor colegio', alumnoEncontrado)
+    console.log(iD, "existe en el gestor colegio", alumnoEncontrado)
     return alumnoEncontrado
   }else{
-    console.log(iD , 'No existe en el gestor colegio')
+    console.log(iD , "No existe en el gestor colegio")
   }
 }
 
 //modifica al alumno buscado, en la propiedad que se le indica e incorpora el valor que se le asigne con dicho cambio
-  modificarAlumno(iD:string = readlineSync.question('Escriba el iD del alumno: '),prop:string = readlineSync.question('Escriba la propiedad del alumno: '),valorAct:string = readlineSync.question('Escriba la actualización del alumno: ')){
+  modificarAlumno(iD:string = readlineSync.question("Escriba el iD del alumno: "),prop:string = readlineSync.question('Escriba la propiedad del alumno: '),valorAct:string = readlineSync.question('Escriba la actualización del alumno: ')){
   let listadoAlumno=this.dataAlumno();
   let modificarAlumno=listadoAlumno.find((alumno: Alumno)=>alumno.iD === iD);
   if(modificarAlumno){
@@ -65,22 +90,22 @@ export default class GestorColegio {
   }
 
 //Busca el alumno a través de su iD y al comprobar su existencia lo elimina
-  eliminarAlumno(iD:string = readlineSync.question('Escriba el iD del alumno: ')){
+  eliminarAlumno(iD:string = readlineSync.question("Escriba el iD del alumno: ")){
   let listadoAlumno=this.dataAlumno();
   let borrarAlumno=listadoAlumno.findIndex((alumno:Alumno )=>alumno.iD === iD);
   if(borrarAlumno >= 0){
     listadoAlumno.splice(borrarAlumno, 1)
-    console.log('Alumno eliminado', iD);
+    console.log("Alumno eliminado", iD);
   }else{
-    console.log('Alumno', iD , 'no ha sido eliminado')
+    console.log("Alumno", iD , "no ha sido eliminado")
   }
   fs.writeFileSync('./Archivos-Json/Alumnos.json',JSON.stringify(listadoAlumno))
 }
 
 //Genera un nuevo profesor, consultando el nombre/apellido y la selección de la materia que dicta.
   agregarProfesor(){
-    let nombre:string = readlineSync.question('Escriba el nombre del profesor: ').toLocaleLowerCase();
-    let apellido:string = readlineSync.question('Escriba el apellido del profesor: ').toLocaleLowerCase();
+    let nombre:string = readlineSync.question("Escriba el nombre del profesor: ").toLocaleLowerCase();
+    let apellido:string = readlineSync.question("Escriba el apellido del profesor: ").toLocaleLowerCase();
     let arrayMat=["matematica","literatura","historia","geografia","biologia","fisica","ingles","edFisica"]
     let materiaAsignada= readlineSync.keyInSelect(arrayMat,"¿que materia dicta?: ")
     let asign:string = arrayMat[materiaAsignada];
@@ -91,7 +116,7 @@ export default class GestorColegio {
   }
 
 //Busca el iD del profesor y luego modifica al mismo en la propiedad que se le indique, incorporando lo que indica el usuario
-  modificarProfesor(iD:string = readlineSync.question('Escriba el iD del profesor: '),prop:string = readlineSync.question('Escriba la propiedad del profesor: '),valorAct:string = readlineSync.question('Escriba la actualización del profesor: ')){
+  modificarProfesor(iD:string = readlineSync.question("Escriba el iD del profesor: "),prop:string = readlineSync.question('Escriba la propiedad del profesor: '),valorAct:string = readlineSync.question('Escriba la actualización del profesor: ')){
     let listadoProfesores=this.dataProfesor();
     let modificarProfesor=listadoProfesores.find((profesor: Profesor)=>profesor.iD === iD);
     if(modificarProfesor){
@@ -104,36 +129,79 @@ export default class GestorColegio {
     }
 
 //Busca el profesor a traves del iD y devuelve si este existe o no en el archivo Profesor.json.    
-  consultarProfesor(iD:string = readlineSync.question('Escriba el iD del profesor: ')){
+  consultarProfesor(iD:string = readlineSync.question("Escriba el iD del profesor: ")){
     let profesorEncontrado=this.dataProfesor().find((profesor:Profesor)=> profesor.iD === iD);
     if(profesorEncontrado){
-      console.log(iD, 'existe en el gestor colegio', profesorEncontrado)
+      console.log(iD, "existe en el gestor colegio", profesorEncontrado)
       return profesorEncontrado
     }else{
-      console.log(iD , 'No existe en el gestor colegio')
+      console.log(iD , "No existe en el gestor colegio")
     }
   }
 //Busca el profesor a través del iD y si éste existe, procede a eliminarlo.
-  eliminarProfesor(iD:string = readlineSync.question('Escriba el iD del profesor: ')){
+  eliminarProfesor(iD:string = readlineSync.question("Escriba el iD del profesor: ")){
     let listadoProfesores=this.dataProfesor();
     let borrarProfesor=listadoProfesores.findIndex((profesor:Profesor )=>profesor.iD === iD);
     if(borrarProfesor >= 0){
       listadoProfesores.splice(borrarProfesor, 1)
-      console.log('Profesor eliminado', iD);
+      console.log("Profesor eliminado", iD);
     }else{
-      console.log('Profesor', iD , 'no ha sido eliminado')
+      console.log("Profesor", iD , "no ha sido eliminado")
     }
     fs.writeFileSync('./Archivos-Json/Profesor.json',JSON.stringify(listadoProfesores))
   }
-
   listAlumnos(){
-    console.log(this.dataAlumno());
+    let direccionA = this.dataAlumno()
+    let alumnos = JSON.stringify(direccionA,null,2);
+    console.log(alumnos);
   }
   listProfesores(){
-    console.log(this.dataProfesor());
+    let direccionP = this.dataProfesor()
+    let profesores = JSON.stringify(direccionP,null,2);
+    console.log(profesores);
   }
-  
-   }
+  listarAlumnosXProfesor(iD: string = readlineSync.question("Escriba el iD del profesor: ")) {
+    let rutaB = './Archivos-Json/Profesor.json';
+    let profesores = JSON.parse(fs.readFileSync(rutaB));
+    let profesor = profesores.find((profe: Profesor) => profe.iD === iD);
+    if (!profesor) {
+      console.log("El profesor con ID " , iD , " no existe");
+      return;
+    }
+    console.log("El profesor con ID " , iD , " existe" );
+    let materiaProfesor = profesor.materiaAsignada; // Captura la materia del profesor
+    console.log("y dicta la materia:", materiaProfesor);
+    let rutaA = './Archivos-Json/Alumnos.json';
+    let alumnos = JSON.parse(fs.readFileSync(rutaA));
+    let alumnosMateria = alumnos.filter((alumno:any) => alumno.materias.includes(materiaProfesor));
+    let alumnosJson = JSON.stringify(alumnosMateria, null, 2);
+    console.log(alumnosJson);
+    return;
+  }
+  listarProfesoresXAlumno(iD:string= readlineSync.question("Escriba el iD del alumno: ")){
+    let rutaA = './Archivos-Json/Alumnos.json';
+    let alumnos = JSON.parse(fs.readFileSync(rutaA));
+    let alumno = alumnos.find((escolar: any) => escolar.iD === iD);
+    if (!alumno) {
+      console.log("El alumno con ID " , iD , " no existe");
+      return;
+    }else{
+      let materiaAlumno=alumno.materias;
+      console.log("las materias del alumno son: " , materiaAlumno);
+      for (let i = 0; i < materiaAlumno.length; i++) {
+        let materia = materiaAlumno[i];
+        console.log("Materia: " , materia);
+      let rutaB = './Archivos-Json/Profesor.json';
+      let profesores = JSON.parse(fs.readFileSync(rutaB));
+      let profesoresMateria = profesores.filter((profeMat: any) => profeMat.materiaAsignada.includes(materia));
+      for (let j = 0; j < profesoresMateria.length; j++) {
+        let profesor = profesoresMateria[j];
+        console.log("El profesor de:", profesor.materiaAsignada, " se llama: ", profesor.nombre , " " ,profesor.apellido);
+    }  
+  }  
+}  
+}
+}
   
 
 
