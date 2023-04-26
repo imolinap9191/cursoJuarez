@@ -1,26 +1,134 @@
 [
   {
+    "nombre": "marina",
+    "apellido": "erasun",
+    "iD": "c8fc4",
+    "materias": [
+      {
+        "materia": "matematica",
+        "nota": 7
+      },
+      {
+        "materia": "literatura",
+        "nota": 8
+      },
+      {
+        "materia": "historia",
+        "nota": 5
+      }
+    ]
+  },
+  {
     "nombre": "ignacio",
     "apellido": "molina",
-    "iD": "84cf1",
-    "materias": ["matematica", "literatura"],
-    "notas": [5 , 8],
-    "promedio": 0
+    "iD": "81310",
+    "materias": [
+      {
+        "materia": "geografia",
+        "nota": 6
+      }
+    ]
   },
   {
-    "nombre": "gdfg",
-    "apellido": "er",
-    "iD": "84cf2",
-    "materias": ["matematica", "literatura"],
-    "notas": [0, 0],
-    "promedio": 0
+    "nombre": "monica",
+    "apellido": "perco",
+    "iD": "81fa1",
+    "materias": [
+      {
+        "materia": "biologia",
+        "nota": 7
+      },
+      {
+        "materia": "fisica",
+        "nota": 5
+      }
+    ]
   },
   {
-    "nombre": "gdfg",
-    "apellido": "er",
-    "iD": "84cf3",
-    "materias": ["matematica", "literatura"],
-    "notas": [0, 0],
-    "promedio": 0
+    "nombre": "jose",
+    "apellido": "lopez",
+    "iD": "84886",
+    "materias": [
+      {
+        "materia": "ingles",
+        "nota": 10
+      }
+    ]
+  },
+  {
+    "nombre": "natalia",
+    "apellido": "gomez",
+    "iD": "981e1",
+    "materias": [
+      {
+        "materia": "geografia",
+        "nota": 8
+      },
+      {
+        "materia": "edFisica",
+        "nota": 3
+      }
+    ]
+  },
+  {
+    "nombre": "juan",
+    "apellido": "perez",
+    "iD": "8b366",
+    "materias": [
+      {
+        "materia": "matematica",
+        "nota": 2
+      },
+      {
+        "materia": "historia",
+        "nota": 7
+      },
+      {
+        "materia": "biologia",
+        "nota": 5
+      },
+      {
+        "materia": "edFisica",
+        "nota": 10
+      },
+      {
+        "materia": "literatura",
+        "nota": 4
+      }
+    ]
+  },
+  {
+    "nombre": "luciana",
+    "apellido": "sosa",
+    "iD": "87c5a",
+    "materias": [
+      {
+        "materia": "historia",
+        "nota": 5
+      },
+      {
+        "materia": "geografia",
+        "nota": 5
+      },
+      {
+        "materia": "fisica",
+        "nota": 10
+      }
+    ]
+  },
+  {
+    "nombre": "pedro",
+    "apellido": "gonzalez",
+    "iD": "faffc",
+    "materias": [
+      {
+        "materia": "geografia",
+        "nota": 8
+      },
+      {
+        "materia": "fisica",
+        "nota": 5
+      }
+    ]
   }
 ]

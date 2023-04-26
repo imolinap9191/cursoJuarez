@@ -1,16 +1,50 @@
 [
   {
-    "nombre": "Joaquin",
-    "apellido": "perez",
-    "iD": "80e08",
-    "alumnos": [],
+    "nombre": "jose",
+    "apellido": "lopez",
+    "iD": "4dfc3",
+    "materiaAsignada": "matematica"
+  },
+  {
+    "nombre": "cecilia",
+    "apellido": "ortega",
+    "iD": "e2212",
+    "materiaAsignada": "literatura"
+  },
+  {
+    "nombre": "fabiana",
+    "apellido": "modelo",
+    "iD": "1c473",
+    "materiaAsignada": "historia"
+  },
+  {
+    "nombre": "ignacio",
+    "apellido": "perco",
+    "iD": "1d62a",
+    "materiaAsignada": "geografia"
+  },
+  {
+    "nombre": "jorge",
+    "apellido": "stafa",
+    "iD": "a7cca",
     "materiaAsignada": "biologia"
   },
   {
-    "nombre": "juen",
-    "apellido": "gsd",
-    "iD": "80e09",
-    "alumnos": [],
-    "materiaAsignada": "matematicas"
+    "nombre": "juliana",
+    "apellido": "quevedo",
+    "iD": "7ce3e",
+    "materiaAsignada": "fisica"
+  },
+  {
+    "nombre": "pedro",
+    "apellido": "noel",
+    "iD": "b8aef",
+    "materiaAsignada": "ingles"
+  },
+  {
+    "nombre": "romina",
+    "apellido": "vega",
+    "iD": "35708",
+    "materiaAsignada": "edFisica"
   }
 ]
