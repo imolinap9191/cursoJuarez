@@ -128,3 +128,30 @@ mostrarVector(v2,6)
 console.log("valores de vSuma");
 mostrarVector(vSuma,6)
 */
+/*
+------------FOREACH()----------
+let array= [2,5,8,9,10,7,1];
+array.forEach((numeros)=>{
+    console.log(numeros)
+})
+array.push(25)
+
+array.forEach((numeros)=>{
+    console.log(numeros)
+})*/
+/*
+-------------FILTER()--------------
+function mayoresQ6(num:any){
+    return num<6 
+}
+let array2= [2,5,8,9,10,7,1].filter(mayoresQ6)
+
+console.log(array2)
+*/
+/*-------------MAP-------------------
+let array= [2,5,8,9,10,7,1];
+let numbx2 = array.map( (n)=>{
+    return n*2  
+})
+console.log(numbx2)
+*/
